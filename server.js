@@ -2,8 +2,16 @@
 var MongoClient = require('mongodb').MongoClient;
 const client = require('socket.io').listen(4000).sockets;
 var http = require('http');
+var express = require('express');
+var app  =express();
+const port = 3000
+app.get('/', (req, res) => res.sendFile(__dirname+'/index.html'))
+
+
 //connect to mongo
 var url = "mongodb+srv://unha:unha280198@cluster0-mfk2y.mongodb.net/test?retryWrites=true&w=majority";
+
+
 MongoClient.connect(url, { useNewUrlParser: true },function(err, cl) {
 if(err){
     throw err;
@@ -54,11 +62,4 @@ if(err){
     })
 }
 });
-/*
-http.createServer((req, res)=>{
-    res.write('Hello World!');
-}).listen(3000)
-*/
-
-
-
+app.listen(port)

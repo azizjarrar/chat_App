@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/azizjarrar/chat_App/issues"
   },
-  "homepage": "https://github.com/azizjarrar/chat_App#readme"
+  "homepage": "https://github.com/azizjarrar/chat_App#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.2.7",
+    "socket.io": "^2.2.0"
+  }
 }
